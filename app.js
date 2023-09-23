@@ -11,13 +11,15 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect('mongodb+srv://<YourUsername>:<YourPassword>@cluster0.yb3jo2c.mongodb.net/<YourCollectionName>');
+mongoose.connect(
+    `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.yb3jo2c.mongodb.net/${process.env.DB_COLLECTION}`,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  );
 
 const userSchema = new mongoose.Schema({
     email: String,
     password: String
 });
-
 
 userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"]});
 
