@@ -22,4 +22,4 @@ This repository serves as a practical guide and example for implementing user au
 - Level 3 - Hashing Passwords
 - Level 4 - Salting and Hashing Passwords with bcrypt
 - Level 5 - Using Passport.js to Add Cookies and Sessions
-- Level 6 - OAuth 2.0 & How to Implement Sign In with Google
+- Level 6 - OAuth 2.0 & Implement Sign In with Google
