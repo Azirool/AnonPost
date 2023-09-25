@@ -36,7 +36,8 @@ mongoose.connect(
 const userSchema = new mongoose.Schema({
     email: String,
     password: String, 
-    googleId: String
+    googleId: String,
+    secret: String
 });
 
 //Set up schema to use local-mongoose plugin
@@ -105,9 +106,22 @@ app.get("/login", (req, res) =>{
 
 //Secrets Page
 app.get("/secrets", (req, res) =>{
+    User.find({"secret": { $ne: null}}).then((foundUser) =>{
+        if(foundUser){
+            res.render("secrets", {usersWithSecrets: foundUser});
+        } else {
+            console.log("User Not Found");
+        }
+    }).catch((err) =>{
+        console.log(err);
+    })
+});
+
+//SUbmit Page
+app.get("/submit", (req,res) =>{
     //Check whether user is authenticated
     if(req.isAuthenticated()){
-        res.render("secrets");
+        res.render("submit");
     }else {
         res.redirect("/login");
     }
@@ -153,6 +167,27 @@ app.post("/login", (req, res) =>{
         }
     });
 });
+
+//Submit Function
+app.post("/submit", (req,res) =>{
+    const submittedSecret = req.body.secret;
+
+    User.findById(req.user.id).then((foundUser) =>{
+        if(foundUser){
+            foundUser.secret = submittedSecret;
+            foundUser.save().then(() =>{
+                res.redirect("/secrets");
+            }).catch((err) =>{
+                console.log(err);
+            });
+        }else{
+            console.log("User Not found");
+        }
+    }).catch((err) =>{
+        console.log(err);
+    });
+});
+
 
 //Server
 app.listen(3000, () =>{
