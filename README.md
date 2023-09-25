@@ -1,7 +1,7 @@
 # Secure-Node-Auth-With-Mongoose
 This repository serves as a practical guide and example for implementing user authentication with Mongoose, a MongoDB Object Data Modeling library, in Node.js applications. Explore secure user login, registration, and authentication processes to enhance your web development skills
 
-##Key Technologies and Features Covered:
+## Key Technologies and Features Covered:
 
 - dotenv: Manage environment variables for enhanced security and configuration flexibility.
 - express: Create a robust and scalable web application framework.
@@ -15,7 +15,7 @@ This repository serves as a practical guide and example for implementing user au
 - passport-google-oauth20: Enable seamless Google OAuth 2.0 authentication.
 
 
-##Consists of 6 Level of Security
+## Consists of 6 Level of Security
 
 - Level 1 - Register Users with Username and Password
 - Level 2 - Database Encryption
