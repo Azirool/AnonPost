@@ -1,5 +1,5 @@
-# Secure-Node-Auth-With-Mongoose
-This repository serves as a practical guide and example for implementing user authentication with Mongoose, a MongoDB Object Data Modeling library, in Node.js applications. Explore secure user login, registration, and authentication processes to enhance your web development skills
+# AnonPost
+A user-friendly website for anonymous posts while implementing secure user authentication with Mongoose, a MongoDB Object Data Modeling library, in Node.js applications. This project serves as a practical guide and example for enhancing web development skills through in-depth exploration of secure user login and registration processes.
 
 ## Key Technologies and Features Covered:
 
