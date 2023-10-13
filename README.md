@@ -13,6 +13,7 @@ A user-friendly website for anonymous posts while implementing secure user authe
 - passport: Build versatile and modular authentication middleware.
 - passport-local-mongoose: Simplify user authentication with Mongoose.
 - passport-google-oauth20: Enable seamless Google OAuth 2.0 authentication.
+- tailwindcss: Add the Tailwind CSS framework to style your web application.
 
 
 ## Consists of 6 Level of Security
